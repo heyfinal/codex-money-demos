@@ -3,37 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blue Skies Plumbing Conversion Concept</title>
+    <title>Blue Skies Plumbing Premium Conversion Concept</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --navy: #0f2942;
-        --sky: #e8f4ff;
-        --blue: #1471c8;
-        --blue-deep: #0c5aa1;
-        --sun: #ffb451;
-        --line: rgba(15, 41, 66, 0.12);
-        --card: rgba(255, 255, 255, 0.84);
-        --shadow: 0 18px 50px rgba(15, 41, 66, 0.14);
+        --navy: #20374d;
+        --navy-deep: #15293b;
+        --powder: #eef5fb;
+        --panel: #f7fbff;
+        --line: rgba(21, 41, 59, 0.12);
+        --sky: #2d80de;
+        --sky-bright: #4ea6ff;
+        --sun: #f7b533;
+        --sun-deep: #d68c11;
+        --ink: #17304a;
+        --muted: #5f7690;
+        --white: #ffffff;
+        --shadow: 0 28px 70px rgba(21, 41, 59, 0.18);
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
-        font-family: "Source Sans 3", sans-serif;
-        color: var(--navy);
+        color: var(--ink);
+        font-family: "Space Grotesk", sans-serif;
         background:
-          radial-gradient(circle at top left, rgba(20, 113, 200, 0.16), transparent 30%),
-          radial-gradient(circle at bottom right, rgba(255, 180, 81, 0.22), transparent 25%),
-          linear-gradient(180deg, #f9fcff, var(--sky));
+          radial-gradient(circle at 12% 8%, rgba(78, 166, 255, 0.22), transparent 20%),
+          radial-gradient(circle at 90% 12%, rgba(247, 181, 51, 0.24), transparent 16%),
+          linear-gradient(180deg, #f6fbff, #eaf4fb 58%, #f8fbfe);
       }
 
       a {
@@ -42,19 +51,18 @@
       }
 
       .shell {
-        width: min(1100px, calc(100% - 32px));
+        width: min(1180px, calc(100% - 28px));
         margin: 0 auto;
       }
 
       .topbar {
-        padding: 18px 0;
-        border-bottom: 1px solid var(--line);
+        padding: 16px 0 8px;
       }
 
       .topbar-inner,
-      .hero-grid,
-      .proof-grid,
-      .stack,
+      .hero,
+      .split,
+      .cards-3,
       .footer {
         display: grid;
         gap: 18px;
@@ -71,188 +79,302 @@
         gap: 14px;
       }
 
-      .badge {
-        width: 48px;
-        height: 48px;
-        border-radius: 16px;
+      .brand-mark {
+        width: 56px;
+        height: 56px;
         display: grid;
         place-items: center;
-        color: white;
-        font-weight: 700;
+        border-radius: 18px;
+        color: var(--white);
+        font-family: "Teko", sans-serif;
+        font-size: 1.65rem;
         letter-spacing: 0.08em;
-        background: linear-gradient(135deg, var(--blue), #2c91ee);
+        background: linear-gradient(145deg, var(--sky), var(--sky-bright));
         box-shadow: var(--shadow);
       }
 
       .brand-copy strong,
       .eyebrow,
-      .card h3,
-      .mini h3 {
-        letter-spacing: 0.02em;
+      h1,
+      h2,
+      h3,
+      .stat strong,
+      .tape {
+        font-family: "Teko", sans-serif;
+      }
+
+      .brand-copy strong {
+        display: block;
+        font-size: 1.45rem;
+        line-height: 1;
+        color: var(--navy-deep);
       }
 
       .brand-copy span,
-      .muted,
-      .mini p,
-      .card p,
+      .meta,
+      p,
       li {
-        color: rgba(15, 41, 66, 0.74);
+        color: var(--muted);
       }
 
       .hero {
-        padding: 56px 0 34px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1.15fr 0.85fr;
+        grid-template-columns: 1.08fr 0.92fr;
         align-items: start;
+        padding: 16px 0 22px;
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        padding: 8px 14px;
+        padding: 10px 16px;
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.8);
         border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.76);
+        color: var(--navy);
         font-size: 0.95rem;
-        font-weight: 700;
-        margin-bottom: 16px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
       h1,
-      h2 {
-        font-family: "Fraunces", serif;
+      h2,
+      h3 {
         margin: 0;
+        color: var(--navy-deep);
+        line-height: 0.92;
+        letter-spacing: -0.02em;
       }
 
       h1 {
-        font-size: clamp(2.8rem, 5.6vw, 5rem);
-        line-height: 0.95;
-        max-width: 11ch;
+        margin-top: 18px;
+        max-width: 7ch;
+        font-size: clamp(4.4rem, 9vw, 7.2rem);
       }
 
       .hero-copy {
-        font-size: 1.16rem;
-        line-height: 1.65;
-        max-width: 58ch;
-        margin: 18px 0 24px;
+        max-width: 56ch;
+        margin: 16px 0 0;
+        font-size: 1.08rem;
+        line-height: 1.78;
       }
 
       .cta-row {
         display: flex;
         flex-wrap: wrap;
         gap: 14px;
+        margin: 30px 0 24px;
       }
 
       .button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 54px;
+        min-height: 56px;
         padding: 0 24px;
         border-radius: 999px;
         font-weight: 700;
       }
 
       .button-primary {
-        background: var(--blue);
-        color: white;
-        box-shadow: 0 14px 30px rgba(20, 113, 200, 0.22);
+        color: var(--white);
+        background: linear-gradient(145deg, var(--sky), #1763c5);
+        box-shadow: 0 18px 36px rgba(45, 128, 222, 0.28);
       }
 
       .button-secondary {
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.72);
       }
 
-      .hero-panel,
-      .card,
-      .mini {
-        border-radius: 26px;
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .stat {
+        min-width: 160px;
+        padding: 14px 16px;
         border: 1px solid var(--line);
-        background: var(--card);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.66);
+      }
+
+      .stat strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 2rem;
+        color: var(--navy-deep);
+      }
+
+      .hero-rail {
+        position: relative;
+        overflow: hidden;
+        border-radius: 34px;
+        border: 1px solid rgba(21, 41, 59, 0.1);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.7)),
+          linear-gradient(135deg, rgba(247, 181, 51, 0.14), transparent 55%);
         box-shadow: var(--shadow);
       }
 
-      .hero-panel {
-        padding: 22px;
+      .hero-rail::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        height: 18px;
+        background: linear-gradient(90deg, var(--sun), #ffd978);
       }
 
-      .mini {
+      .hero-rail::after {
+        content: "";
+        position: absolute;
+        inset: auto -34px -34px auto;
+        width: 210px;
+        height: 210px;
+        border-radius: 50%;
+        background: rgba(45, 128, 222, 0.13);
+      }
+
+      .rail-inner {
+        position: relative;
+        z-index: 1;
+        padding: 34px 28px 28px;
+      }
+
+      .portrait-row {
+        display: grid;
+        grid-template-columns: 132px 1fr;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .portrait {
+        width: 132px;
+        height: 132px;
+        border-radius: 50%;
+        border: 10px solid rgba(45, 128, 222, 0.16);
+        background:
+          radial-gradient(circle at 50% 30%, #ffffff 0 14%, transparent 15%),
+          radial-gradient(circle at 50% 48%, #ffffff 0 20%, transparent 21%),
+          radial-gradient(circle at 50% 72%, #ffffff 0 28%, transparent 29%),
+          linear-gradient(180deg, #39b6ff, #0d7ddd);
+        box-shadow: 0 14px 26px rgba(21, 41, 59, 0.12);
+      }
+
+      .rail-card,
+      .quote-card,
+      .section-card {
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.68);
+        backdrop-filter: blur(10px);
+      }
+
+      .rail-card {
+        margin-top: 16px;
         padding: 18px;
       }
 
-      .stack {
-        grid-template-columns: 1fr;
+      .rail-card h3,
+      .section-card h3 {
+        margin-bottom: 8px;
+        font-size: 1.6rem;
       }
 
-      .proof {
-        padding: 8px 0 42px;
+      .tape {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 14px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: linear-gradient(145deg, var(--sun), var(--sun-deep));
+        color: var(--white);
+        font-size: 1.05rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
       }
 
-      .proof-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .section {
+        padding: 14px 0 26px;
       }
 
-      .card {
-        padding: 22px;
+      .split {
+        grid-template-columns: 1.08fr 0.92fr;
       }
 
-      ul {
-        margin: 12px 0 0;
-        padding-left: 18px;
+      h2 {
+        font-size: clamp(2.5rem, 5vw, 4.2rem);
+        margin-bottom: 14px;
       }
 
-      .form-shell {
-        padding: 42px 0 52px;
+      .section-card {
+        padding: 26px;
       }
 
-      .form-grid {
+      .issues,
+      .offers {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        gap: 12px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
       }
 
-      .field,
-      .textarea {
-        border: 1px solid rgba(15, 41, 66, 0.14);
-        border-radius: 18px;
-        background: white;
-        min-height: 56px;
+      .issues li,
+      .offers li {
         padding: 14px 16px;
-        font: inherit;
+        border-radius: 18px;
+        border: 1px solid rgba(21, 41, 59, 0.08);
+        background: rgba(255, 255, 255, 0.74);
+      }
+
+      .issues strong,
+      .offers strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--navy-deep);
+      }
+
+      .quote-card {
+        padding: 26px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.68)),
+          linear-gradient(135deg, rgba(45, 128, 222, 0.08), transparent);
+      }
+
+      .quote-card blockquote {
+        margin: 0 0 14px;
         color: var(--navy);
+        font-size: 1.32rem;
+        line-height: 1.62;
       }
 
-      .textarea {
-        min-height: 142px;
-        resize: vertical;
-      }
-
-      .span-2 {
-        grid-column: span 2;
+      .cards-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .footer {
         grid-template-columns: 1fr auto;
-        padding: 20px 0 40px;
-        border-top: 1px solid var(--line);
-        color: rgba(15, 41, 66, 0.72);
+        padding: 26px 0 42px;
       }
 
-      @media (max-width: 840px) {
-        .hero-grid,
-        .proof-grid,
-        .form-grid,
+      @media (max-width: 920px) {
+        .topbar-inner,
+        .hero,
+        .split,
+        .cards-3,
         .footer,
-        .topbar-inner {
+        .portrait-row {
           grid-template-columns: 1fr;
         }
 
-        .span-2 {
-          grid-column: auto;
+        .portrait {
+          width: 108px;
+          height: 108px;
         }
       }
     </style>
@@ -261,123 +383,172 @@
     <header class="topbar">
       <div class="shell topbar-inner">
         <div class="brand">
-          <div class="badge">BS</div>
+          <div class="brand-mark">BS</div>
           <div class="brand-copy">
             <strong>Blue Skies Plumbing Concept</strong>
-            <span>Independent conversion concept focused on faster estimate requests</span>
+            <span>Premium remodel conversion direction</span>
           </div>
         </div>
-        <div class="muted">Prepared by Cody Moneylabs</div>
+        <div class="meta">Prepared by Cody Moneylabs</div>
       </div>
     </header>
 
-    <main>
+    <main class="shell">
       <section class="hero">
-        <div class="shell hero-grid">
-          <div>
-            <div class="eyebrow">Spokane conversion concept</div>
-            <h1>Make the estimate path clearer and lighter.</h1>
-            <p class="hero-copy">
-              This concept keeps the premium, owner-led positioning Blue Skies already has, but moves the
-              estimate path higher, shortens the first step, and gives the homepage a stronger call to act.
-            </p>
-            <div class="cta-row">
-              <a class="button button-primary" href="#form">Request a Fast Estimate</a>
-              <a class="button button-secondary" href="#notes">See Key Changes</a>
+        <div>
+          <div class="eyebrow">Owner-led premium plumbing</div>
+          <h1>Turn strong trust into faster estimates.</h1>
+          <p class="hero-copy">
+            The original site already has something valuable: it feels real, independent, and proud of
+            its craft. The upgrade is not to sterilize that personality. It is to sharpen it. This
+            direction keeps the bold blue-and-yellow identity, but restructures the page so high-intent
+            remodel and upgrade traffic meets a stronger promise and a lighter first contact step.
+          </p>
+          <div class="cta-row">
+            <a class="button button-primary" href="mailto:codexmoneylab8b4240@proton.me?subject=Blue%20Skies%20Concept">Request the production build</a>
+            <a class="button button-secondary" href="#upgrade">See the upgrade path</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>1</strong>
+              Hero estimate ask moves above the founder story
             </div>
-          </div>
-          <div class="hero-panel">
-            <div class="stack">
-              <div class="mini">
-                <h3>What changes first</h3>
-                <p>Lead with one clear estimate CTA instead of sending visitors deep into story content before contact.</p>
-              </div>
-              <div class="mini">
-                <h3>Why this matters</h3>
-                <p>The current page looks credible, but the contact step sits too low and the form asks for too much too early.</p>
-              </div>
-              <div class="mini">
-                <h3>Quick fix examples</h3>
-                <p>Repair the “Call of text” typo, trim the first-step form, and add service-specific CTA blocks near the top.</p>
-              </div>
+            <div class="stat">
+              <strong>2</strong>
+              First contact flow shrinks to essentials
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="proof">
-        <div class="shell">
-          <div class="proof-grid">
-            <article class="card">
-              <h3>Reduce friction</h3>
-              <p>Ask only for name, email or phone, and job type on the first step. Move preference and consent detail to step two.</p>
-            </article>
-            <article class="card">
-              <h3>Pull contact up</h3>
-              <p>Bring a compact estimate box above the founder story so high-intent visitors do not have to scroll the full page first.</p>
-            </article>
-            <article class="card">
-              <h3>Clarify service fit</h3>
-              <p>Use dedicated CTA cards for remodels, hot water upgrades, and new construction so the next move feels obvious.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="form-shell" id="form">
-        <div class="shell">
-          <div class="card">
-            <h2>Fast estimate concept</h2>
-            <p class="muted">
-              This is the kind of shorter first-step intake I would ship first. It is designed to lift completions from mobile visitors and impatient high-intent traffic.
-            </p>
-            <div class="form-grid">
-              <input class="field" placeholder="Full name" />
-              <input class="field" placeholder="Email or mobile number" />
-              <input class="field" placeholder="Service type" />
-              <input class="field" placeholder="Preferred time to reply" />
-              <textarea class="textarea span-2" placeholder="Brief job details"></textarea>
-              <div class="span-2">
-                <a class="button button-primary" href="mailto:codexmoneylab8b4240@proton.me?subject=Blue%20Skies%20concept">Send for review</a>
-              </div>
+            <div class="stat">
+              <strong>3</strong>
+              Premium job types get clearer routing
             </div>
           </div>
         </div>
+
+        <aside class="hero-rail">
+          <div class="rail-inner">
+            <div class="portrait-row">
+              <div class="portrait" aria-hidden="true"></div>
+              <div>
+                <h3>Keep the owner-led feel.</h3>
+                <p>
+                  The current page wins because it feels like a real local specialist, not a franchise.
+                  The redesign should protect that while making the page commercially sharper.
+                </p>
+              </div>
+            </div>
+
+            <div class="rail-card">
+              <h3>What gets fixed first</h3>
+              <p>
+                The estimate path arrives earlier, the first interaction asks for less, and the contact
+                section feels deliberate instead of appended after the long-scroll story.
+              </p>
+              <div class="tape">Premium estimate rail</div>
+            </div>
+
+            <div class="rail-card">
+              <h3>What definitely stays</h3>
+              <p>
+                Blue/yellow identity, bold contractor tone, founder visibility, and the premium-home
+                positioning that makes this business feel distinct.
+              </p>
+            </div>
+          </div>
+        </aside>
       </section>
 
-      <section class="shell" id="notes">
-        <div class="proof-grid">
-          <article class="card">
-            <h3>Current strengths</h3>
-            <ul>
-              <li>Strong owner-led trust and real project imagery.</li>
-              <li>Clear premium positioning for remodels and higher-value work.</li>
-              <li>Public phone and email already visible on the site.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Current drag points</h3>
-            <ul>
-              <li>Main request flow sits low on the page.</li>
-              <li>Current form asks for too many fields before contact begins.</li>
-              <li>Primary CTA language is softer than the site’s trust level.</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>First deliverable</h3>
-            <ul>
-              <li>Homepage CTA rewrite and compact mobile-first estimate block.</li>
-              <li>Service CTA cards for remodel, new build, and water heater jobs.</li>
-              <li>Production-ready static page handoff with fast turnaround.</li>
-            </ul>
-          </article>
-        </div>
+      <section class="section split" id="upgrade">
+        <article class="section-card">
+          <h2>This needs tightening, not flattening.</h2>
+          <ul class="issues">
+            <li>
+              <strong>The contact moment comes too late.</strong>
+              Visitors who already believe the quality story should not have to reach the lower half of the page before they can raise a hand.
+            </li>
+            <li>
+              <strong>The first-step form asks for too much.</strong>
+              Preferences, timing, and extra detail can come later. The first move should be faster.
+            </li>
+            <li>
+              <strong>The premium pitch is under-staged.</strong>
+              The copy says “distinctive Spokane homes,” but the current layout does not fully deliver on that level of design confidence.
+            </li>
+          </ul>
+        </article>
+
+        <aside class="quote-card">
+          <h3>Design direction</h3>
+          <blockquote>
+            “Make it feel like the boutique contractor people call for the expensive project,
+            not the generic local site they browse and forget.”
+          </blockquote>
+          <p>
+            That means stronger hierarchy, more deliberate color blocking, and a page structure that
+            sells premium work sooner instead of explaining everything first and asking later.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section cards-3">
+        <article class="section-card">
+          <h3>Hero rebuild</h3>
+          <ul class="offers">
+            <li>
+              <strong>Primary CTA</strong>
+              A harder-working “Request a fast estimate” action replaces the softer consultation rhythm.
+            </li>
+            <li>
+              <strong>Trust cluster</strong>
+              License, service footprint, and premium scope sit right beside the ask.
+            </li>
+            <li>
+              <strong>Short form</strong>
+              Name, preferred contact, job type, and short details only.
+            </li>
+          </ul>
+        </article>
+
+        <article class="section-card">
+          <h3>Service routing</h3>
+          <ul class="offers">
+            <li>
+              <strong>Luxury remodel lane</strong>
+              Built for kitchen, bath, and custom fixture projects.
+            </li>
+            <li>
+              <strong>New construction lane</strong>
+              Signals design and install confidence for higher-value residential work.
+            </li>
+            <li>
+              <strong>Hot water lane</strong>
+              Lets upgrade traffic convert without being buried inside the broader story.
+            </li>
+          </ul>
+        </article>
+
+        <article class="section-card">
+          <h3>Production handoff</h3>
+          <ul class="offers">
+            <li>
+              <strong>Static build</strong>
+              Faster mobile experience with stronger visual hierarchy.
+            </li>
+            <li>
+              <strong>Copy cleanup</strong>
+              Sharper headline system and a cleaner contact section.
+            </li>
+            <li>
+              <strong>Launch-ready</strong>
+              Designed so it can be moved into a real small-business stack without friction.
+            </li>
+          </ul>
+        </article>
       </section>
     </main>
 
     <footer class="shell footer">
-      <div>Blue Skies Plumbing conversion concept</div>
-      <div>Prepared March 13, 2026</div>
+      <div>Blue Skies Plumbing premium conversion concept</div>
+      <div>March 13, 2026</div>
     </footer>
   </body>
 </html>

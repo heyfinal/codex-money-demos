@@ -3,24 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DC Plumbing Spokane Concept</title>
+    <title>DC Plumbing Spokane Conversion Concept</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Teko:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --ink: #17322b;
-        --ink-soft: #355b50;
-        --paper: #f5efe4;
-        --paper-deep: #e8dfcf;
-        --accent: #d95f32;
-        --accent-dark: #b5461d;
-        --line: rgba(23, 50, 43, 0.12);
-        --card: rgba(255, 255, 255, 0.7);
-        --shadow: 0 18px 50px rgba(23, 50, 43, 0.12);
+        --ink: #f4f2ec;
+        --sand: #bcb6aa;
+        --night: #111414;
+        --night-soft: #1b2121;
+        --line: rgba(244, 242, 236, 0.12);
+        --rust: #df5f34;
+        --rust-deep: #b6451f;
+        --fog: rgba(255, 255, 255, 0.06);
+        --glow: 0 24px 70px rgba(0, 0, 0, 0.34);
       }
 
       * {
@@ -29,12 +29,11 @@
 
       body {
         margin: 0;
-        font-family: "Source Sans 3", sans-serif;
         color: var(--ink);
+        font-family: "Space Grotesk", sans-serif;
         background:
-          radial-gradient(circle at top left, rgba(217, 95, 50, 0.12), transparent 34%),
-          radial-gradient(circle at bottom right, rgba(53, 91, 80, 0.16), transparent 30%),
-          linear-gradient(180deg, #fbf7f0, var(--paper));
+          radial-gradient(circle at top right, rgba(223, 95, 52, 0.18), transparent 24%),
+          linear-gradient(180deg, #171c1c, #0d1111 42%, #151919);
       }
 
       a {
@@ -43,20 +42,23 @@
       }
 
       .shell {
-        width: min(1120px, calc(100% - 32px));
+        width: min(1180px, calc(100% - 32px));
         margin: 0 auto;
       }
 
-      .topbar {
-        padding: 18px 0;
-        border-bottom: 1px solid var(--line);
+      .topbar,
+      .hero,
+      .analysis,
+      .grid-3,
+      .footer {
+        display: grid;
+        gap: 18px;
       }
 
-      .topbar-inner {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
+      .topbar {
+        grid-template-columns: 1fr auto;
         align-items: center;
+        padding: 18px 0 10px;
       }
 
       .brand {
@@ -65,476 +67,347 @@
         gap: 14px;
       }
 
-      .brand-badge {
-        width: 46px;
-        height: 46px;
-        border-radius: 14px;
-        background: linear-gradient(145deg, var(--accent), #f08a56);
-        color: white;
+      .brand-mark,
+      .eyebrow,
+      h1,
+      h2,
+      h3,
+      .stat strong {
+        font-family: "Teko", sans-serif;
+      }
+
+      .brand-mark {
+        width: 54px;
+        height: 54px;
+        border-radius: 18px;
         display: grid;
         place-items: center;
-        font-weight: 700;
+        background: linear-gradient(135deg, var(--rust), #ff8c5a);
+        color: white;
+        font-size: 1.5rem;
         letter-spacing: 0.08em;
-        box-shadow: var(--shadow);
-      }
-
-      .brand-copy strong,
-      .eyebrow,
-      .mini-card h3,
-      .service-card h3,
-      .contact-card h3,
-      .proof h3 {
-        letter-spacing: 0.02em;
-      }
-
-      .brand-copy strong {
-        display: block;
-        font-size: 1.1rem;
+        box-shadow: var(--glow);
       }
 
       .brand-copy span,
-      .nav a,
-      .hero-meta,
-      .proof p,
-      .service-card p,
-      .contact-card p,
-      .mini-card p {
-        color: var(--ink-soft);
-      }
-
-      .nav {
-        display: flex;
-        gap: 18px;
-        font-weight: 600;
+      p,
+      li,
+      .meta {
+        color: var(--sand);
       }
 
       .hero {
-        padding: 56px 0 34px;
-      }
-
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 28px;
+        grid-template-columns: 1.05fr 0.95fr;
         align-items: stretch;
+        padding: 10px 0 28px;
       }
 
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        padding: 8px 14px;
+        padding: 10px 16px;
+        border: 1px solid var(--line);
         border-radius: 999px;
-        background: rgba(255, 255, 255, 0.72);
-        border: 1px solid rgba(23, 50, 43, 0.08);
-        font-size: 0.95rem;
-        font-weight: 700;
-        margin-bottom: 18px;
-      }
-
-      h1,
-      h2 {
-        font-family: "Fraunces", serif;
-        margin: 0;
+        background: rgba(255, 255, 255, 0.05);
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
       h1 {
-        font-size: clamp(2.8rem, 6vw, 5.1rem);
-        line-height: 0.96;
-        max-width: 12ch;
+        margin: 18px 0 14px;
+        max-width: 8ch;
+        font-size: clamp(3.4rem, 8vw, 6.5rem);
+        line-height: 0.84;
+        letter-spacing: -0.03em;
       }
 
-      .hero-copy {
-        font-size: 1.18rem;
-        line-height: 1.6;
-        max-width: 58ch;
-        margin: 18px 0 24px;
+      .lead {
+        max-width: 54ch;
+        font-size: 1.06rem;
+        line-height: 1.75;
       }
 
       .cta-row {
         display: flex;
         flex-wrap: wrap;
         gap: 14px;
-        margin-bottom: 18px;
+        margin: 28px 0 24px;
       }
 
       .button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 54px;
+        min-height: 56px;
         padding: 0 24px;
         border-radius: 999px;
         font-weight: 700;
-        transition: transform 160ms ease, box-shadow 160ms ease;
-      }
-
-      .button:hover {
-        transform: translateY(-1px);
       }
 
       .button-primary {
-        background: var(--accent);
+        background: linear-gradient(135deg, var(--rust), var(--rust-deep));
         color: white;
-        box-shadow: 0 14px 30px rgba(217, 95, 50, 0.24);
-      }
-
-      .button-primary:hover {
-        background: var(--accent-dark);
+        box-shadow: 0 18px 34px rgba(223, 95, 52, 0.3);
       }
 
       .button-secondary {
-        background: rgba(255, 255, 255, 0.7);
-        border: 1px solid rgba(23, 50, 43, 0.12);
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.05);
       }
 
-      .hero-meta {
+      .stats {
         display: flex;
         flex-wrap: wrap;
-        gap: 14px 20px;
-        font-weight: 600;
+        gap: 12px;
       }
 
-      .hero-panel {
-        position: relative;
-        overflow: hidden;
-        border-radius: 32px;
-        background: linear-gradient(165deg, rgba(255, 255, 255, 0.8), rgba(232, 223, 207, 0.86));
-        border: 1px solid rgba(23, 50, 43, 0.08);
-        box-shadow: var(--shadow);
-        padding: 22px;
+      .stat,
+      .panel,
+      .card {
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        background: var(--fog);
+        backdrop-filter: blur(10px);
       }
 
-      .hero-panel::after {
-        content: "";
-        position: absolute;
-        inset: auto -60px -90px auto;
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        background: rgba(217, 95, 50, 0.14);
+      .stat {
+        min-width: 150px;
+        padding: 14px 16px;
       }
 
-      .mini-grid {
+      .stat strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 2rem;
+        color: #fff9f2;
+      }
+
+      .panel {
+        padding: 24px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04)),
+          linear-gradient(135deg, rgba(223, 95, 52, 0.09), transparent 58%);
+        box-shadow: var(--glow);
+      }
+
+      .panel-grid {
         display: grid;
         gap: 14px;
       }
 
-      .mini-card,
-      .service-card,
-      .contact-card,
-      .proof {
-        position: relative;
-        border-radius: 24px;
-        background: var(--card);
-        border: 1px solid rgba(23, 50, 43, 0.08);
-        backdrop-filter: blur(8px);
+      .mini {
+        padding: 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
 
-      .mini-card {
-        padding: 18px 18px 16px;
+      h2 {
+        margin: 0 0 14px;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        line-height: 0.95;
       }
 
-      .mini-card h3,
-      .service-card h3,
-      .contact-card h3,
-      .proof h3 {
+      h3 {
         margin: 0 0 8px;
-        font-size: 1.05rem;
-      }
-
-      .mini-card p,
-      .service-card p,
-      .contact-card p,
-      .proof p {
-        margin: 0;
-        line-height: 1.5;
+        font-size: 1.5rem;
+        line-height: 1;
       }
 
       .section {
-        padding: 18px 0 48px;
+        padding: 18px 0 28px;
       }
 
-      .section-header {
-        display: flex;
-        justify-content: space-between;
-        gap: 18px;
-        align-items: end;
-        margin-bottom: 18px;
+      .analysis {
+        grid-template-columns: 1.1fr 0.9fr;
       }
 
-      .section-header p {
-        margin: 0;
-        max-width: 52ch;
-        color: var(--ink-soft);
-      }
-
-      .services {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .service-card {
-        padding: 22px;
-      }
-
-      .service-tag {
-        display: inline-block;
-        margin-bottom: 12px;
-        padding: 6px 10px;
-        border-radius: 999px;
-        background: rgba(23, 50, 43, 0.07);
-        font-size: 0.84rem;
-        font-weight: 700;
-      }
-
-      .proof-strip {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 14px;
-        margin-top: 18px;
-      }
-
-      .proof {
-        padding: 18px;
-      }
-
-      .contact-wrap {
-        display: grid;
-        grid-template-columns: 0.95fr 1.05fr;
-        gap: 18px;
-      }
-
-      .contact-card {
+      .card {
         padding: 24px;
       }
 
-      .contact-list {
-        margin: 18px 0 0;
-        padding: 0;
+      .checklist {
+        display: grid;
+        gap: 12px;
         list-style: none;
-        display: grid;
-        gap: 12px;
+        margin: 0;
+        padding: 0;
       }
 
-      .contact-list strong {
+      .checklist li {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .checklist strong {
         display: block;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
+        color: #fff9f2;
       }
 
-      .estimate-form {
-        display: grid;
-        gap: 12px;
+      .quote {
+        font-size: 1.24rem;
+        line-height: 1.6;
+        color: #fff3e4;
       }
 
-      .estimate-form input,
-      .estimate-form textarea {
-        width: 100%;
-        border: 1px solid rgba(23, 50, 43, 0.14);
-        border-radius: 16px;
-        padding: 14px 15px;
-        font: inherit;
-        background: rgba(255, 255, 255, 0.84);
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .estimate-form textarea {
-        min-height: 140px;
-        resize: vertical;
+      .footer {
+        grid-template-columns: 1fr auto;
+        padding: 24px 0 40px;
       }
 
-      footer {
-        padding: 20px 0 52px;
-        color: var(--ink-soft);
-        font-size: 0.96rem;
-      }
-
-      @media (max-width: 920px) {
-        .hero-grid,
-        .contact-wrap,
-        .services,
-        .proof-strip {
+      @media (max-width: 900px) {
+        .topbar,
+        .hero,
+        .analysis,
+        .grid-3,
+        .footer {
           grid-template-columns: 1fr;
-        }
-
-        .topbar-inner,
-        .section-header {
-          display: block;
-        }
-
-        .nav {
-          margin-top: 14px;
-          flex-wrap: wrap;
         }
       }
     </style>
   </head>
   <body>
-    <header class="topbar">
-      <div class="shell topbar-inner">
-        <div class="brand">
-          <div class="brand-badge">DC</div>
-          <div class="brand-copy">
-            <strong>DC Plumbing Spokane</strong>
-            <span>Honest plumbing at a fair price.</span>
-          </div>
+    <header class="shell topbar">
+      <div class="brand">
+        <div class="brand-mark">DC</div>
+        <div class="brand-copy">
+          <strong>DC Plumbing Spokane</strong>
+          <span>Direct-response homepage concept</span>
         </div>
-        <nav class="nav" aria-label="Primary">
-          <a href="#services">Services</a>
-          <a href="#why-us">Why Us</a>
-          <a href="#estimate">Request Estimate</a>
-          <a href="tel:5095087400">(509) 508-7400</a>
-        </nav>
       </div>
+      <div class="meta">Prepared by Cody Moneylabs</div>
     </header>
 
-    <main>
+    <main class="shell">
       <section class="hero">
-        <div class="shell hero-grid">
-          <div>
-            <div class="eyebrow">Spokane residential plumbing and drain help</div>
-            <h1>Spokane plumbing help without the runaround.</h1>
-            <p class="hero-copy">
-              Honest residential plumbing, drain cleaning, and repair work from an experienced local
-              plumber. Fast response, fair pricing, and direct contact with the person doing the job.
-            </p>
-            <div class="cta-row">
-              <a class="button button-primary" href="tel:5095087400">Call Now</a>
-              <a class="button button-secondary" href="#estimate">Request an Estimate</a>
-            </div>
-            <div class="hero-meta">
-              <span>24+ years of plumbing experience</span>
-              <span>Family owned and operated</span>
-              <span>Military and senior discounts</span>
-            </div>
+        <div>
+          <div class="eyebrow">Emergency plumbing conversion</div>
+          <h1>Urgent traffic should hit action, not drift.</h1>
+          <p class="lead">
+            The current site gets the basic job done, but it does not feel built for stressed
+            visitors who need a plumber now. This concept pushes the page toward direct response:
+            immediate contact, stronger proof placement, and a harder working mobile hierarchy.
+          </p>
+          <div class="cta-row">
+            <a class="button button-primary" href="mailto:codexmoneylab8b4240@proton.me?subject=DC%20Plumbing%20Concept">Request the build</a>
+            <a class="button button-secondary" href="#upgrade">See the conversion upgrade</a>
           </div>
-
-          <aside class="hero-panel">
-            <div class="mini-grid">
-              <div class="mini-card">
-                <h3>What you can call about</h3>
-                <p>Leak repair, clogged drains, water heaters, fixture replacement, and plumbing troubleshooting.</p>
-              </div>
-              <div class="mini-card">
-                <h3>How this should feel</h3>
-                <p>Clear next steps, direct phone access, and a fast estimate request path for mobile visitors.</p>
-              </div>
-              <div class="mini-card">
-                <h3>Local advantage</h3>
-                <p>One-person accountability, local Spokane coverage, and no bloated call-center handoff.</p>
-              </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>Tap</strong>
+              Call button becomes the dominant mobile action
             </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section" id="services">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <h2>Services people actually need fast</h2>
+            <div class="stat">
+              <strong>Trust</strong>
+              Proof moves above the fold instead of staying buried
             </div>
-            <p>
-              A clearer homepage should make urgent plumbing visitors feel they found the right person immediately,
-              not force them to hunt through a thin WordPress layout.
-            </p>
-          </div>
-
-          <div class="services">
-            <article class="service-card">
-              <div class="service-tag">Drain & repair</div>
-              <h3>Drain cleaning and line issues</h3>
-              <p>Quick response for slow drains, stubborn clogs, and drain line troubleshooting.</p>
-            </article>
-            <article class="service-card">
-              <div class="service-tag">Water heaters</div>
-              <h3>Water heater repair or replacement</h3>
-              <p>Clear help for hot water problems, tank replacement, and repair decisions.</p>
-            </article>
-            <article class="service-card">
-              <div class="service-tag">Fixtures & leaks</div>
-              <h3>Leaks, toilets, and fixture installs</h3>
-              <p>Small jobs still need a strong call path. This layout makes that obvious instead of passive.</p>
-            </article>
+            <div class="stat">
+              <strong>Route</strong>
+              Quote path shortens to one clean first step
+            </div>
           </div>
         </div>
-      </section>
 
-      <section class="section" id="why-us">
-        <div class="shell">
-          <div class="section-header">
-            <div>
-              <h2>Trust signals need to be impossible to miss</h2>
+        <div class="panel">
+          <div class="panel-grid">
+            <div class="mini">
+              <h3>Visual direction</h3>
+              <p>
+                Darker, tighter, and more urgent. This reads like a serious operator instead of a
+                flat local brochure.
+              </p>
             </div>
-            <p>
-              The current site has trust elements, but they are buried. This concept puts them in the primary scan
-              path so the business feels established within seconds.
-            </p>
-          </div>
-
-          <div class="proof-strip">
-            <div class="proof">
-              <h3>Experienced</h3>
-              <p>24+ years working in plumbing and drain cleaning.</p>
+            <div class="mini">
+              <h3>Sales direction</h3>
+              <p>
+                Phone, emergency availability, and local trust are treated as the hero elements,
+                because that is what matters most to distressed traffic.
+              </p>
             </div>
-            <div class="proof">
-              <h3>Family-run</h3>
-              <p>Direct contact with the business owner, not a generic dispatch line.</p>
-            </div>
-            <div class="proof">
-              <h3>Discounts</h3>
-              <p>Military and senior discounts presented as a real offer, not hidden copy.</p>
-            </div>
-            <div class="proof">
-              <h3>Local Spokane</h3>
-              <p>Service positioned around the local area instead of a generic homepage welcome.</p>
+            <div class="mini">
+              <h3>Why it is better</h3>
+              <p>
+                It makes the next move obvious. The current page asks visitors to interpret too much
+                before they know where to click.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="estimate">
-        <div class="shell contact-wrap">
-          <div class="contact-card">
-            <h3>Direct contact block</h3>
-            <p>
-              This replaces the current low-frictionless layout with a cleaner estimate path and a stronger mobile-first call action.
-            </p>
-            <ul class="contact-list">
-              <li>
-                <strong>Call</strong>
-                <a href="tel:5095087400">(509) 508-7400</a>
-              </li>
-              <li>
-                <strong>Email</strong>
-                <a href="mailto:derrick@dcplumbingspokane.com">derrick@dcplumbingspokane.com</a>
-              </li>
-              <li>
-                <strong>Service area</strong>
-                Spokane and nearby residential service calls
-              </li>
-            </ul>
-          </div>
+      <section class="section analysis" id="upgrade">
+        <article class="card">
+          <h2>Where the current page leaks conversions</h2>
+          <ul class="checklist">
+            <li>
+              <strong>The strongest action is not visually dominant.</strong>
+              For emergency plumbing, the page should scream “call now” and “request help” on first glance.
+            </li>
+            <li>
+              <strong>Trust is present but under-leveraged.</strong>
+              Reviews, service proof, and local credibility need to sit higher and tighter.
+            </li>
+            <li>
+              <strong>Mobile urgency is under-designed.</strong>
+              Distressed search traffic should not need to hunt through the page for the fastest next step.
+            </li>
+          </ul>
+        </article>
 
-          <div class="contact-card">
-            <h3>Request an estimate</h3>
-            <p>A compact homepage form gives visitors a second conversion path when they are not ready to call immediately.</p>
-            <form class="estimate-form">
-              <input type="text" placeholder="Name" />
-              <input type="tel" placeholder="Phone number" />
-              <input type="email" placeholder="Email" />
-              <textarea placeholder="What plumbing issue do you need help with?"></textarea>
-              <button class="button button-primary" type="button">Request Estimate</button>
-            </form>
-          </div>
-        </div>
+        <aside class="card">
+          <h3>Redesign intent</h3>
+          <p class="quote">
+            “Make it feel like the crew you call when the leak is active and the floor is already wet.”
+          </p>
+          <p>
+            This is not about decorative polish. It is about a sharper response pattern:
+            immediate phone action, stronger visual contrast, and simpler first-contact flow.
+          </p>
+        </aside>
+      </section>
+
+      <section class="section grid-3">
+        <article class="card">
+          <h3>Hero rebuild</h3>
+          <ul class="checklist">
+            <li><strong>Primary action</strong> persistent tap-to-call with clear response promise.</li>
+            <li><strong>Support action</strong> short estimate request for non-emergency jobs.</li>
+            <li><strong>Proof block</strong> rating, service area, and timing pulled into the opening frame.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Section order</h3>
+          <ul class="checklist">
+            <li><strong>Above fold</strong> emergency contact, trust markers, and service lanes.</li>
+            <li><strong>Mid page</strong> drain, water heater, and emergency job paths separated clearly.</li>
+            <li><strong>Bottom</strong> fuller proof and FAQ instead of burying the only useful CTA.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Production handoff</h3>
+          <ul class="checklist">
+            <li><strong>Fast static build</strong> better mobile speed and stronger hierarchy.</li>
+            <li><strong>Copy cleanup</strong> harder CTA language and less filler.</li>
+            <li><strong>Ready to launch</strong> designed to drop into a live small-business stack without friction.</li>
+          </ul>
+        </article>
       </section>
     </main>
 
-    <footer>
-      <div class="shell">
-        Concept demo prepared to show a clearer conversion-focused homepage direction for DC Plumbing Spokane.
-      </div>
+    <footer class="shell footer">
+      <div>DC Plumbing Spokane conversion concept</div>
+      <div>March 13, 2026</div>
     </footer>
   </body>
 </html>
