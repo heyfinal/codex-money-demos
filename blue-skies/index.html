@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Skies Plumbing Conversion Concept</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0f2942;
+        --sky: #e8f4ff;
+        --blue: #1471c8;
+        --blue-deep: #0c5aa1;
+        --sun: #ffb451;
+        --line: rgba(15, 41, 66, 0.12);
+        --card: rgba(255, 255, 255, 0.84);
+        --shadow: 0 18px 50px rgba(15, 41, 66, 0.14);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans 3", sans-serif;
+        color: var(--navy);
+        background:
+          radial-gradient(circle at top left, rgba(20, 113, 200, 0.16), transparent 30%),
+          radial-gradient(circle at bottom right, rgba(255, 180, 81, 0.22), transparent 25%),
+          linear-gradient(180deg, #f9fcff, var(--sky));
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .shell {
+        width: min(1100px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        padding: 18px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .topbar-inner,
+      .hero-grid,
+      .proof-grid,
+      .stack,
+      .footer {
+        display: grid;
+        gap: 18px;
+      }
+
+      .topbar-inner {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .badge {
+        width: 48px;
+        height: 48px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        background: linear-gradient(135deg, var(--blue), #2c91ee);
+        box-shadow: var(--shadow);
+      }
+
+      .brand-copy strong,
+      .eyebrow,
+      .card h3,
+      .mini h3 {
+        letter-spacing: 0.02em;
+      }
+
+      .brand-copy span,
+      .muted,
+      .mini p,
+      .card p,
+      li {
+        color: rgba(15, 41, 66, 0.74);
+      }
+
+      .hero {
+        padding: 56px 0 34px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: start;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid var(--line);
+        font-size: 0.95rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      h1,
+      h2 {
+        font-family: "Fraunces", serif;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 5.6vw, 5rem);
+        line-height: 0.95;
+        max-width: 11ch;
+      }
+
+      .hero-copy {
+        font-size: 1.16rem;
+        line-height: 1.65;
+        max-width: 58ch;
+        margin: 18px 0 24px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 54px;
+        padding: 0 24px;
+        border-radius: 999px;
+        font-weight: 700;
+      }
+
+      .button-primary {
+        background: var(--blue);
+        color: white;
+        box-shadow: 0 14px 30px rgba(20, 113, 200, 0.22);
+      }
+
+      .button-secondary {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .hero-panel,
+      .card,
+      .mini {
+        border-radius: 26px;
+        border: 1px solid var(--line);
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-panel {
+        padding: 22px;
+      }
+
+      .mini {
+        padding: 18px;
+      }
+
+      .stack {
+        grid-template-columns: 1fr;
+      }
+
+      .proof {
+        padding: 8px 0 42px;
+      }
+
+      .proof-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 18px;
+      }
+
+      .form-shell {
+        padding: 42px 0 52px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .field,
+      .textarea {
+        border: 1px solid rgba(15, 41, 66, 0.14);
+        border-radius: 18px;
+        background: white;
+        min-height: 56px;
+        padding: 14px 16px;
+        font: inherit;
+        color: var(--navy);
+      }
+
+      .textarea {
+        min-height: 142px;
+        resize: vertical;
+      }
+
+      .span-2 {
+        grid-column: span 2;
+      }
+
+      .footer {
+        grid-template-columns: 1fr auto;
+        padding: 20px 0 40px;
+        border-top: 1px solid var(--line);
+        color: rgba(15, 41, 66, 0.72);
+      }
+
+      @media (max-width: 840px) {
+        .hero-grid,
+        .proof-grid,
+        .form-grid,
+        .footer,
+        .topbar-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .span-2 {
+          grid-column: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <div class="brand">
+          <div class="badge">BS</div>
+          <div class="brand-copy">
+            <strong>Blue Skies Plumbing Concept</strong>
+            <span>Independent conversion concept focused on faster estimate requests</span>
+          </div>
+        </div>
+        <div class="muted">Prepared by Cody Moneylabs</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <div class="eyebrow">Spokane conversion concept</div>
+            <h1>Make the estimate path clearer and lighter.</h1>
+            <p class="hero-copy">
+              This concept keeps the premium, owner-led positioning Blue Skies already has, but moves the
+              estimate path higher, shortens the first step, and gives the homepage a stronger call to act.
+            </p>
+            <div class="cta-row">
+              <a class="button button-primary" href="#form">Request a Fast Estimate</a>
+              <a class="button button-secondary" href="#notes">See Key Changes</a>
+            </div>
+          </div>
+          <div class="hero-panel">
+            <div class="stack">
+              <div class="mini">
+                <h3>What changes first</h3>
+                <p>Lead with one clear estimate CTA instead of sending visitors deep into story content before contact.</p>
+              </div>
+              <div class="mini">
+                <h3>Why this matters</h3>
+                <p>The current page looks credible, but the contact step sits too low and the form asks for too much too early.</p>
+              </div>
+              <div class="mini">
+                <h3>Quick fix examples</h3>
+                <p>Repair the “Call of text” typo, trim the first-step form, and add service-specific CTA blocks near the top.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof">
+        <div class="shell">
+          <div class="proof-grid">
+            <article class="card">
+              <h3>Reduce friction</h3>
+              <p>Ask only for name, email or phone, and job type on the first step. Move preference and consent detail to step two.</p>
+            </article>
+            <article class="card">
+              <h3>Pull contact up</h3>
+              <p>Bring a compact estimate box above the founder story so high-intent visitors do not have to scroll the full page first.</p>
+            </article>
+            <article class="card">
+              <h3>Clarify service fit</h3>
+              <p>Use dedicated CTA cards for remodels, hot water upgrades, and new construction so the next move feels obvious.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-shell" id="form">
+        <div class="shell">
+          <div class="card">
+            <h2>Fast estimate concept</h2>
+            <p class="muted">
+              This is the kind of shorter first-step intake I would ship first. It is designed to lift completions from mobile visitors and impatient high-intent traffic.
+            </p>
+            <div class="form-grid">
+              <input class="field" placeholder="Full name" />
+              <input class="field" placeholder="Email or mobile number" />
+              <input class="field" placeholder="Service type" />
+              <input class="field" placeholder="Preferred time to reply" />
+              <textarea class="textarea span-2" placeholder="Brief job details"></textarea>
+              <div class="span-2">
+                <a class="button button-primary" href="mailto:codexmoneylab8b4240@proton.me?subject=Blue%20Skies%20concept">Send for review</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell" id="notes">
+        <div class="proof-grid">
+          <article class="card">
+            <h3>Current strengths</h3>
+            <ul>
+              <li>Strong owner-led trust and real project imagery.</li>
+              <li>Clear premium positioning for remodels and higher-value work.</li>
+              <li>Public phone and email already visible on the site.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Current drag points</h3>
+            <ul>
+              <li>Main request flow sits low on the page.</li>
+              <li>Current form asks for too many fields before contact begins.</li>
+              <li>Primary CTA language is softer than the site’s trust level.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>First deliverable</h3>
+            <ul>
+              <li>Homepage CTA rewrite and compact mobile-first estimate block.</li>
+              <li>Service CTA cards for remodel, new build, and water heater jobs.</li>
+              <li>Production-ready static page handoff with fast turnaround.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell footer">
+      <div>Blue Skies Plumbing conversion concept</div>
+      <div>Prepared March 13, 2026</div>
+    </footer>
+  </body>
+</html>
